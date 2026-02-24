@@ -1,0 +1,6 @@
+*.dll
+*.json
+*.exe
+*.pdb
+/frontend-csharp/obj/Debug
+/frontend-csharp/obj
