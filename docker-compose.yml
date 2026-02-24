@@ -1,0 +1,17 @@
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-pasteleria
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: pasteleria
+    ports:
+      - "3306:3306"
+
+  backend-api:
+    build: ./backend-java/api
+    container_name: java-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql-db
